@@ -17,6 +17,7 @@ Usage
 -----
 
 ::
+
     >>> from fnvhash import fnv1a_32
     >>> hex(fnv1a_32(b'foo'))
     '0xa9f37ed7'
