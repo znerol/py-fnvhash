@@ -5,4 +5,9 @@ python:
   - "3.3"
   - "3.4"
   - "nightly"
-script: python setup.py test
+install:
+  - pip install coveralls
+script:
+  - coverage run --source=fnvhash setup.py test
+after_success:
+  - coveralls
