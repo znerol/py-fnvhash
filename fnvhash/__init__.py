@@ -90,13 +90,13 @@ def fnv1a_64(data, hval_init=FNV1_64_INIT):
 
 def fnv1_1024(data, hval_init=FNV1_1024_INIT):
     """
-    Returns the 64 bit FNV-1 hash value for the given data.
+    Returns the 1024 bit FNV-1 hash value for the given data.
     """
     return fnv(data, hval_init, FNV_1024_PRIME, 2**1024)
 
 def fnv1a_1024(data, hval_init=FNV1_1024A_INIT):
     """
-    Returns the 64 bit FNV-1a hash value for the given data.
+    Returns the 1024 bit FNV-1a hash value for the given data.
     """
     return fnva(data, hval_init, FNV_1024_PRIME, 2**1024)
 
