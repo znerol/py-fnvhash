@@ -9,6 +9,8 @@ from __future__ import unicode_literals
 
 FNV_32_PRIME = 0x01000193
 FNV_64_PRIME = 0x100000001b3
+FNV_1024_PRIME = 0x10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000018d
+
 
 FNV0_32_INIT = 0
 FNV0_64_INIT = 0
@@ -16,6 +18,9 @@ FNV1_32_INIT = 0x811c9dc5
 FNV1_32A_INIT = FNV1_32_INIT
 FNV1_64_INIT = 0xcbf29ce484222325
 FNV1_64A_INIT = FNV1_64_INIT
+FNV1_1024_INIT = 0x5f7a76758ecc4d32e56d5a591028b74b29fc4223fdada16c3bf34eda3674da9a21d9000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000004c6d7eb6e73802734510a555f256cc005ae556bde8cc9c6a93b21aff4b16c71ee90b3
+FNV1_1024A_INIT = FNV1_64_INIT
+
 
 import sys
 if sys.version_info[0] == 3:
@@ -82,3 +87,16 @@ def fnv1a_64(data, hval_init=FNV1_64_INIT):
     Returns the 64 bit FNV-1a hash value for the given data.
     """
     return fnva(data, hval_init, FNV_64_PRIME, 2**64)
+
+def fnv1_1024(data, hval_init=FNV1_1024_INIT):
+    """
+    Returns the 64 bit FNV-1 hash value for the given data.
+    """
+    return fnv(data, hval_init, FNV_1024_PRIME, 2**1024)
+
+def fnv1a_1024(data, hval_init=FNV1_1024A_INIT):
+    """
+    Returns the 64 bit FNV-1a hash value for the given data.
+    """
+    return fnva(data, hval_init, FNV_1024_PRIME, 2**1024)
+
