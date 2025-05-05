@@ -1,0 +1,11 @@
+---
+name: Publish (Release)
+
+# yamllint disable-line rule:truthy
+on:
+  release:
+    types: [created]
+
+jobs:
+  publish-pypy:
+    uses: ./.github/workflows/do-publish-pypi.yml
