@@ -1,0 +1,25 @@
+---
+name: Run unit tests on code base
+
+# yamllint disable-line rule:truthy
+on:
+  workflow_call:
+
+jobs:
+  unit-test:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Run unit tests
+        run: python3 -m unittest --verbose

@@ -1,0 +1,10 @@
+---
+name: Run Tests (Pull Request)
+
+# yamllint disable-line rule:truthy
+on:
+  pull_request:
+
+jobs:
+  unit-test:
+    uses: ./.github/workflows/do-unit-test.yml
