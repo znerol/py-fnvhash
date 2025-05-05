@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fnvhash"
+version = "0.1.0"
+authors = [{ name = "Lorenz Schori", email = "lo@znerol.ch" }]
+description = "Pure Python FNV hash implementation."
+requires-python = ">=3.9"
+keywords = ["fnv", "fnv1", "fnv1a", "hash"]
+license = { text = "MIT" }
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 2.7",
+    "Programming Language :: Python :: 3",
+    "Topic :: Internet",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Software Development",
+    "Topic :: Utilities"
+]
+dynamic = ["readme"]
+
+[project.urls]
+Homepage = "https://github.com/znerol/py-fnvhash"
+
+[tool.setuptools.dynamic]
+readme = { file = ["README.rst"] }

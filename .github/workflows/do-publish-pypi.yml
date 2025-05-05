@@ -1,0 +1,47 @@
+---
+name: Upload Python Package
+
+# yamllint disable-line rule:truthy
+on:
+  workflow_call:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: pip install build
+
+      - name: Build
+        run: python -m build .
+
+      - uses: actions/upload-artifact@v4
+        with:
+          path: ./dist
+          name: dist
+
+  pypi-publish:
+    needs: ['build']
+    runs-on: ubuntu-latest
+    environment:
+      name: pypi
+      url: https://pypi.org/p/fnvhash/
+    permissions:
+      # IMPORTANT: this permission is mandatory for trusted publishing
+      id-token: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: ./dist
+          name: dist
+
+      - name: Publish package distributions to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
