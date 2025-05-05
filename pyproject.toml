@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "fnvhash"
-version = "0.2.0"
+version = "0.2.1"
 authors = [{ name = "Lorenz Schori", email = "lo@znerol.ch" }]
 description = "Pure Python FNV hash implementation."
 requires-python = ">=3.9"
