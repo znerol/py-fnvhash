@@ -1,10 +1,7 @@
 Pure Python FNV hash implementation
 ===================================
 
-.. image:: https://travis-ci.org/znerol/py-fnvhash.svg?branch=master
-    :target: https://travis-ci.org/znerol/py-fnvhash
-.. image:: https://coveralls.io/repos/github/znerol/py-fnvhash/badge.svg?branch=master
-    :target: https://coveralls.io/github/znerol/py-fnvhash?branch=master
+|Build Status| |Package Version|
 
 
 Pure Python implementation of the FNV_ hash family with 100% test coverage.
@@ -29,3 +26,8 @@ License
 -------
 
 The software is subject to the MIT license.
+
+.. |Build Status| image:: https://github.com/znerol/py-fnvhash/actions/workflows/on-push.yml/badge.svg
+   :target: https://github.com/znerol/py-fnvhash/actions/workflows/on-push.yml
+.. |Package Version| image:: https://img.shields.io/pypi/v/fnvhash.svg
+   :target: https://pypi.python.org/pypi/fnvhash
